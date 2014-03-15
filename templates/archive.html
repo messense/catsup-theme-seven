@@ -8,7 +8,7 @@
     {% for post in archive.posts %}
     <article>
         <header>
-            <a href="{{ url_for(post) }}" title="{{ post.title }}"><h1 class="title">{{ post.title }}</h1></a>
+            <a href="{{ url_for(post) }}" title="{{ post.title }}"><h1 class="title" style="text-align: left">{{ post.title }}</h1></a>
         </header>
         <footer>
             <h4>

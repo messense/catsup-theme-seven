@@ -36,6 +36,34 @@
                 {% endblock %}
             </section>
         </div>
+        <div class="index-info">
+            <section>
+                <div id="tagcloud" class="col">
+                    <h2>Tag Cloud</h2>
+                    <ul>
+                        {% for tag in generator.tags %}
+                        <li><a class="tag" href="{{ url_for(tag) }}" title="{{ tag.name }}">{{ tag.name }} ({{ tag.count }})</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div id="archives" class="col">
+                    <h2>Archives</h2>
+                    <ul>
+                        {% for archive in generator.archives %}
+                        <li><a href="{{ url_for(archive) }}">{{ archive.year }} ({{ archive.count }})</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div id="links" class="col">
+                    <h2>Links</h2>
+                    <ul>
+                        {% for link in theme.links %}
+                        <li><a href="{{ link["url"] }}" title="{{ link["description"] }}" target="_blank">{{ link["name"] }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </section>
+        </div>
         <footer class="index-footer">
             <section>
                 <a href="{{ site.url }}"><b>{{ site.name }}</b></a><span> &copy; {{ site.description }}</span>
