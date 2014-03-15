@@ -1,5 +1,5 @@
-{{ extends 'layout.html' }}
-{{ block content }}
+{% extends 'layout.html' %}
+{% block content %}
 <section id="post" class="clearfix">
     {% for post in pagination.items %}
     <article>
@@ -32,4 +32,4 @@
         </nav>
     </section>
 </section>
-{{ endblock }}
+{% endblock %}
