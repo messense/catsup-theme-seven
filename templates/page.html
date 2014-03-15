@@ -1,4 +1,5 @@
 {% extends 'layout.html' %}
+{% block title %}{{ site.name }}{% if pagination.page > 1 %} - 第 {{ pagination.page }} 页{% endif %}{% endblock %}
 {% block content %}
 <section id="post" class="clearfix">
     {% for post in pagination.items %}

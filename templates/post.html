@@ -1,5 +1,6 @@
 {% extends 'layout.html' %}
 {% from 'utils.html' import render_comment%}
+{% block title %}{{ post.title }} - {{ site.name }}{% endblock %}
 {% block content %}
 <div class="article-main">
     <div class="page-container">
