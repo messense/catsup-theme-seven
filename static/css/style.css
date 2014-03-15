@@ -131,6 +131,40 @@ a:hover {
   padding: 55px 0;
   background-color: #383838;
 }
+.index-info section {
+  max-width: 1020px;
+  margin: 0 auto;
+  line-height: 30px;
+}
+.index-info section .col {
+  width: 30%;
+  float: left;
+  margin-left: 20px;
+}
+.index-info .col h2 {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Abel", "Helvetica Neue", Helvetica, Arial, Sans-serif;
+  padding-left: 10px;
+}
+.index-info .col ul {
+  list-style: none;
+}
+.index-info .col ul li {
+  display: block;
+  float: left;
+  width: 130px;
+  height: 20px;
+  margin: 0 20px 10px 0;
+}
+.index-info .col li a {
+  height: 20px;
+  line-height: 20px;
+  display: block;
+  width: 120px;
+  font-size: 11px;
+  padding-left: 10px;
+}
 @media (max-width: 1199px) {
   #site-footer {
     padding: 40px 0;
