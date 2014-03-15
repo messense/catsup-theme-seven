@@ -198,7 +198,7 @@ a:hover {
 #site-footer .footer-nav > li > a.active {
   color: #fff;
 }
-/*#site-footer .sns-info {
+#site-footer .sns-info {
   float: right;
   margin-top: -6px;
   line-height: 20px;
@@ -213,9 +213,9 @@ a:hover {
   border-radius: 40px;
   cursor: pointer;
   background-image: url(../images/sns-logo.png);
-}*/
+}
 @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 2) {
-/*#site-footer .sns-info > div {
+  #site-footer .sns-info > div {
     background-image: url(../images/sns-logo@2x.png);
     background-size: 114px 76px;
   }
@@ -315,7 +315,7 @@ a:hover {
   margin: 0 auto;
   background-image: url(../images/weixin-qr.jpg);
   background-size: 120px 120px;
-}*/
+}
 .pagination {
   margin-bottom: 70px;
   width: 100%;
@@ -329,45 +329,6 @@ a:hover {
 .pagination .next {
   float: right;
 }
-.index-info {
-  color: #ffffff;
-  background-color: #333;
-  padding: 30px 0;
-}
-/*.index-info section {
-  max-width: 1020px;
-  margin: 0 auto;
-  line-height: 30px;
-}
-.index-info section .col {
-  width: 30%;
-  float: left;
-  margin-left: 20px;
-}
-.index-info .col h2 {
-  font-size: 14px;
-  font-weight: bold;
-  font-family: "Abel", "Helvetica Neue", Helvetica, Arial, Sans-serif;
-  padding-left: 10px;
-}
-.index-info .col ul {
-  list-style: none;
-}
-.index-info .col ul li {
-  display: block;
-  float: left;
-  width: 130px;
-  height: 20px;
-  margin: 0 20px 10px 0;
-}
-.index-info .col li a {
-  height: 20px;
-  line-height: 20px;
-  display: block;
-  width: 120px;
-  font-size: 11px;
-  padding-left: 10px;
-}*/
 .index-footer {
   padding: 30px 0;
   border-top: 1px solid #f2f2f2;
@@ -539,6 +500,7 @@ article footer .tag {
   margin-top: 30px;
   color: #383838;
   font-size: 36px;
+  font-weight: bold;
   line-height: 1.2em;
   text-align: center;
 }
