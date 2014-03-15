@@ -1,0 +1,45 @@
+{% from "utils.html" import analytics %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        {% block head %}{% endblock %}
+        <title>{% block title %}{{ site.name }}{% endblock %}</title>
+        <meta name="author" content="{{ author.name }}" />
+        <meta name="description" content="{{ site.description }}" />
+        <link rel="stylesheet" href="{{ static_url("css/ui.css") }}" type="text/css" />
+        <link rel="stylesheet" href="{{ static_url("css/style.css") }}" type="text/css" />
+        <link rel="stylesheet" href="{{ static_url("css/pygments_style.css") }}" type="text/css" />
+        <link rel="alternate" type="application/rss+xml" href="{{ url_for('feed') }}" title="{{ site.name }}" />
+        <link rel="canonical" href="{{ permalink }}"/>
+        {{ analytics() }}
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="container">
+                <nav role="navigation" class="navbar">
+                    <div class="navbar-header"><a href="/" class="navbar-brand">Teambition</a></div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="/" title="首页">首页</a></li>
+                            {% for page in pages %}
+                            <li><a href="{{ url_for(page) }}" title="{{ page.title }}">{{ page.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="index-main">
+            <section id="wrapper">
+                {{ block content }}
+                {{ endblock }}
+            </section>
+        </div>
+        <footer class="index-footer">
+            <section>
+                <a href="{{ site.url }}"><b>{{ site.name }}</b></a><span> &copy; {{ site.description }}</span>
+            </section>
+        </footer>
+    </body>
+</html>
