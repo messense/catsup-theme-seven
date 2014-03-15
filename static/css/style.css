@@ -487,8 +487,6 @@ article footer .tag {
   font-size: 14px;
 }
 #post > article {
-  width: 480px;
-  float: left;
   position: relative;
   margin-bottom: 60px;
   padding-bottom: 30px;
@@ -1123,10 +1121,6 @@ body {
     margin: 0 auto;
     margin-top: 80px;
     max-width: 1020px;
-  }
-  #wrapper #post > article {
-    width: 480px;
-    float: left;
   }
   #wrapper #post > article.right {
     float: right;
