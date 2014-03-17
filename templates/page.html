@@ -1,36 +1,34 @@
 {% extends 'layout.html' %}
 {% block title %}{{ site.name }}{% if pagination.page > 1 %} - 第 {{ pagination.page }} 页{% endif %}{% endblock %}
 {% block content %}
-<section id="post" class="clearfix">
+<div class="row">
     {% for post in pagination.items %}
-    <article>
-        <header>
+    <article class="post col-md-12">
+        <header class="page-header">
             <a href="{{ url_for(post) }}" title="{{ post.title }}"><h1 class="title">{{ post.title }}</h1></a>
         </header>
-        <section class="main-content">
+        <div class="content">
             {{ post.content }}
-        </section>
+        </div>
         <footer>
             <h4>
                 <small>
                     <time>{{ post.date }}</time>
                     {% for tag in post.tags %}
-                    <a class="tag" href="{{ url_for(tag) }}" title="Tag # {{ tag.name }}">#{{ tag.name }}</a>
+                    <a class="tag pull-right" href="{{ url_for(tag) }}" title="Tag # {{ tag.name }}">#{{ tag.name }}</a>
                     {% endfor %}
                 </small>
             </h4>
         </footer>
     </article>
     {% endfor %}
-    <section class="pagination">
-        <nav class="clearfix">
-            {% if pagination.has_prev %}
-            <a href="{{ pagination.prev_permalink }}" class="btn prev btn-default" title="上一页">上一页</a>
-            {% endif %}
-            {% if pagination.has_next %}
-            <a href="{{ pagination.next_permalink }}" class="btn next btn-default" title="下一页">下一页</a>
-            {% endif %}
-        </nav>
-    </section>
-</section>
+    <ul class="pager">
+        {% if pagination.has_prev %}
+        <li class="previous"><a href="{{ pagination.prev_permalink }}" class="btn btn-default" title="上一页">&larr; 上一页</a></li>
+        {% endif %}
+        {% if pagination.has_next %}
+        <li class="next"><a href="{{ pagination.next_permalink }}" class="btn btn-default" title="下一页">下一页 &rarr;</a></li>
+        {% endif %}
+    </ul>
+</div>
 {% endblock %}
