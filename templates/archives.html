@@ -1,4 +1,30 @@
 {% extends 'layout.html' %}
+{% block title %}
+Archives - {{ site.name }}
+{% endblock %}
 {% block content %}
-
+<div class="row">
+    {% for archive in archives %}
+    <h2>Archive of the year {{ archive.year }}</h2>
+    <div class="posts col-md-12">
+        {% for post in archive.posts %}
+        <article class="post">
+            <header class="page-header">
+                <a href="{{ url_for(post) }}" title="{{ post.title }}"><h1 class="title">{{ post.title }}</h1></a>
+            </header>
+            <footer>
+            <h4>
+                <small>
+                    <time>{{ post.date }}</time>
+                    {% for tag in post.tags %}
+                    <a class="tag pull-right" href="{{ url_for(tag) }}" title="Tag # {{ tag.name }}">#{{ tag.name }}</a>
+                    {% endfor %}
+                </small>
+            </h4>
+            </footer>
+        </article>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}

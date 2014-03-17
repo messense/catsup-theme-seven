@@ -34,7 +34,8 @@
       </div>
       <nav class="collapse navbar-collapse seven-navbar-collapse" role="navigation">
         <ul class="nav navbar-nav">
-          <li><a href="/" title="首页">首页</a>
+          <li><a href="{{ url_for('index') }}" title="首页">首页</a>
+          <li><a href="{{ url_for('archives') }}" title="归档">归档</a>
           </li>
           {% for page in pages %}
           <li><a href="{{ url_for(page) }}" title="{{ page.title }}">{{ page.title }}</a>
