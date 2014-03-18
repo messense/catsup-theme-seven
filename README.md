@@ -25,6 +25,7 @@ mkdir themes
 cd themes
 git clone https://github.com/messense/catsup-theme-seven.git
 mv catsup-theme-seven seven
+```
 
 Configuration
 --------------

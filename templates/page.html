@@ -1,19 +1,28 @@
 {% extends 'layout.html' %}
 {% block title %}{{ site.name }}{% if pagination.page > 1 %} - 第 {{ pagination.page }} 页{% endif %}{% endblock %}
 {% block content %}
-<div class="row">
+<div class="row postlist">
     {% for post in pagination.items %}
     <article class="post col-md-12">
-        <header class="page-header">
-            <a href="{{ url_for(post) }}" title="{{ post.title }}"><h1 class="title">{{ post.title }}</h1></a>
+        <header>
+            {% if theme.display_thumbnail and 'thumbnail' in post.meta %}
+            <a href="{{ url_for(post) }}" title="{{ post.title }}" class="center-block thumbnail" style="background-image: url('{{ post.meta.thumbnail }}')"></a>
+            {% endif %}
+            <div class="page-header">
+                <a href="{{ url_for(post) }}" title="{{ post.title }}"><h1 class="title">{{ post.title }}</h1></a>
+            </div>
         </header>
         <div class="content">
+            {% if theme.use_excerpt %}
+            {{ post.content|excerpt(theme.max_excerpt_length) }}
+            {% else %}
             {{ post.content }}
+            {% endif %}
         </div>
         <footer>
             <h4>
                 <small>
-                    <time>{{ post.date }}</time>
+                    <time datetime="{{ post.datetime.strftime('%a %b %d %Y %z') }}">{{ post.date }}</time>
                     {% for tag in post.tags %}
                     <a class="tag pull-right" href="{{ url_for(tag) }}" title="Tag # {{ tag.name }}">#{{ tag.name }}</a>
                     {% endfor %}
