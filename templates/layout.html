@@ -6,7 +6,9 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">{% block head %}{% endblock %}
   <title>{% block title %}{{ site.name }}{% endblock %}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="author" content="{{ author.name }}" />
   <meta name="description" content="{{ site.description }}" />
   <link rel="stylesheet" href="{{ static_url('css/ui.css') }}" type="text/css" />
@@ -15,9 +17,9 @@
   <link rel="alternate" type="application/rss+xml" href="{{ url_for('feed') }}" title="{{ site.name }}" />
   <link rel="canonical" href="{{ permalink }}" />{{ analytics() }}
   <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
 
 <body>
@@ -93,7 +95,7 @@
     <div class="container text-center">
       Proudly powered by <a href="https://github.com/whtsky/catsup" title="Catsup - A static blog generator.">Catsup</a>
       <span>&bull;</span>
-      Seven Theme by <a href="http://messense.me" title="Messense">Messense</a>
+      Theme <a href="https://github.com/messense/catsup-theme-seven" title="Catsup theme Seven">Seven</a> by <a href="http://messense.me" title="Messense">Messense</a>
     </div>
   </footer>
   <script type="text/javascript" src="{{ static_url('js/jquery.min.js') }}"></script>
