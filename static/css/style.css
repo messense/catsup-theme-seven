@@ -105,6 +105,10 @@ a:hover {
   font-style: italic;
   text-transform: uppercase;
 }
+.seven-main .postlist .pager {
+  padding-left: 15px;
+  padding-right: 15px;
+}
 
 .seven-info {
 
@@ -144,6 +148,10 @@ a:hover {
 @media (min-width: 768px) {
   .seven-main .post .thumbnail {
     height: 240px;
+  }
+  .seven-main .postlist .pager {
+    padding-left: 0;
+    padding-right: 0;
   }
   .seven-header, .seven-info {
     padding: 30px 0;
