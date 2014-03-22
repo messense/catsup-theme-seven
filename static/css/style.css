@@ -79,7 +79,7 @@ a:hover {
 }
 .seven-main .post .page-header {
   margin: 0;
-  padding-bottom: 0;
+  padding-bottom: 5px;
 }
 .seven-main .post .page-header h1 {
   margin: 0;
@@ -87,11 +87,13 @@ a:hover {
 .seven-main .post .content {
   font-size: 16px;
   line-height: 1.7em;
+  word-break: break-word;
+  word-wrap: break-word;
 }
 .seven-main .post .content p {
   font-size: 16px;
   color: #383838;
-  margin: 1em 0;
+  margin: 0.6em 0;
 }
 .seven-main .post time {
   font-size: 12px;
